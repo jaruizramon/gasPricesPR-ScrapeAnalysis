@@ -35,7 +35,7 @@ def refineData(dieselRAW, regularRAW, premiumRAW):
     regular = regularRAW.replace('\xa0\xa0' , ' , ')
     premium = premiumRAW.replace('\xa0\xa0' , ' , ')
     
-    iVar = countLines("C:/Users/Pipo/Documents/IntegrationProyect Files/gasData.csv") #get line number
+    iVar = countLines("gasData.csv") #get line number
     
     csvFriend = diesel +", "+ regular+", "+ premium + ", " + dateScraped.strftime("%m/%d/%Y") + ", " + str(iVar)
     print(csvFriend) # para debuggear
@@ -109,7 +109,7 @@ def getScrapedData():
 #main  
 newData = getScrapedData()
 
-updateFile = open("C:/Users/Pipo/Documents/IntegrationProyect Files/gasData.csv", "a")
+updateFile = open("gasData.csv", "a")
 updateFile.write(newData + "\n")
 updateFile.close()
 plotData()
